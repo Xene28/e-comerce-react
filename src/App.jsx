@@ -1,6 +1,12 @@
 import './App.css'
 import { BrowserRouter, Routes, Router } from 'react-router-dom'
 import Home from "-/screens/Home"
+import Login from "./screens/Login"
+import Register from "./screens/Register"
+import Categories from "./screens/Categories"
+import Products from "./screens/Products"
+import ProductsDetail from "./screens/ProductsDetail"
+import CartDetail from "./screens/CartDetail"
 
 function App() {
   return (
