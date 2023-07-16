@@ -1,16 +1,39 @@
 import { Link } from "react-router-dom";
+import styles from "./styles.module.css"
 
-function Nav() {
+function Navbar() {
   return (
-    <>
-      <p>🥑</p>
-      <ul>
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        <img alt="" /> Ecommerce
+      </div>
+      <ul className={styles.navigation}>
         <li>
-          <Link to="/">Home</Link>
+          <Link className={styles.navElement} to="/">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link className={styles.navElement} to="/products">
+            Products
+          </Link>
+        </li>
+        <li>
+          <Link className={styles.navElement} to="/categories">
+            Categories
+          </Link>
+        </li>
+        <li>
+          <Link className={styles.navElement} to="/login">
+            Login
+          </Link>
+        </li>
+        <li>
+          <input className={styles.searchBar} type="text" placeholder="Search" />
         </li>
       </ul>
-    </>
+    </header>
   );
 }
 
-export default Nav;
+export default Navbar;

@@ -1,0 +1,22 @@
+.card {
+    list-style: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.categoryImg {
+    border-radius: 10px;
+    background-color: azure;
+    height: 320px;
+    width: 320px;
+    min-height: 320px;
+    min-width: 320px;
+}
+
+@media (max-width: 560px) {
+    .categoryImage {
+        width: 90%;
+        height: auto;
+    }
+    
+}
