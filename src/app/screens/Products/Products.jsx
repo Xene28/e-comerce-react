@@ -16,16 +16,21 @@ function Products() {
     return (
         <>
             <h1>Products</h1>
-            <div>
+            
                 <div className={styles.productsGrid}>
                     {isLoading && <Loader />}
                     {isError && <Error error={error} /> }
-                    {isSuccess && products.map((prod) => {
+                    <ul className={styles.productsList} >
+                        
+                        {isSuccess && products.map((prod) => {
                         return <Product key={prod.id} product={prod} />
                     }) }
+                        
+                    </ul>
+                    
                 </div>
 
-            </div>
+            
         </>
     )
 }

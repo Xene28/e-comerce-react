@@ -7,6 +7,8 @@ function Navbar() {
       <div className={styles.logo}>
         <img alt="" /> Ecommerce
       </div>
+
+      <nav className="navbar" >
       <ul className={styles.navigation}>
         <li>
           <Link className={styles.navElement} to="/">
@@ -32,7 +34,11 @@ function Navbar() {
           <input className={styles.searchBar} type="text" placeholder="Search" />
         </li>
       </ul>
+
+      </nav>
+      
     </header>
+    
   );
 }
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from './styles.module.css'
+import styles from './styles.module.css';
+
 function Category(props) {
     const {id, name, image} = props;
     const imageURL = image === "https://placeimg.com/640/480/any" ? "https://picsum.photos/640/640": image;
