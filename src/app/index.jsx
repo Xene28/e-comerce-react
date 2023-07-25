@@ -9,6 +9,8 @@ import Categories from "../app/screens/Categories";
 import Products from "./screens/Products/Products";
 import ProductsDetail from "./screens/ProductDetail/ProductDetail";
 import CartDetail from "../app/screens/CartDetail";
+import ProductsCreate from './screens/ProductsCreate/ProductsCreate';
+import ProductsEdit from './screens/ProductsCreate/ProductsEdit';
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ function App() {
             <Route path="/categories" element={<Categories />} />
             <Route path="/products" element={<Products />} />
             <Route path='/products/:id' element={<ProductsDetail />} />
+            <Route path="/products/create" element={<ProductsCreate />} />
+            <Route path="/products/edit/:id" element={<ProductsEdit />} />
             <Route path="/cart-detail" element={<CartDetail />} />
           </Route>
         </Routes>
