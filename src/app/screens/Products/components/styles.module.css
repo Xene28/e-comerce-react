@@ -1,0 +1,50 @@
+.productCard {
+    border: solid 1px #d5dbdb;
+    padding-bottom: 10px;
+    height: auto;
+}
+
+.productCardContent {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.productsImg {
+    border-radius: 10px;
+    height: 260px;
+    width: 260px;
+    min-height: 226px;
+    min-width: 226px;
+    padding: 8px;
+   
+    
+}
+
+
+
+
+.productPriceContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 12px!important;
+    line-height: 16px!important;
+}
+
+.productPrice {
+    color: rgb(255, 255, 255);
+    background: rgb(204, 12, 57);
+    border-radius: 2px;
+    padding: 4px 6px;
+    position: relative;
+}
+
+@media (max-width: 560px) {
+    .productsImage {
+        width: 90%;
+        height: auto;
+    }
+    
+}

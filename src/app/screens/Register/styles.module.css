@@ -1,0 +1,51 @@
+.authPage{
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(79deg, #7439db, #c66fc6 48%, #f7944d);
+    color: white;
+}
+
+.authFormContainer, .loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.authFormContainer{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+@media screen and (main-width: 600px) {
+
+    .authFormContainer{
+    padding: 5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+}
+
+
+.loginForm label{
+    text-align: left;
+    padding: 0.25rem 0;
+}
+
+.loginForm input{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.loginForm button{
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    color: #7439db;
+}
