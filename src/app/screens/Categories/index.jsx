@@ -3,11 +3,12 @@ import { getCategories } from "../../functions/queries";
 import styles from './styles.module.css'
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
+import CartDetail from "../CartDetail";
 
 function Categories() {
     const {data: categories, error, isError, isSuccess, isLoading, } = getCategories();
     return (
-        <>
+        <>  
             <div> 
             <h1>Categories</h1>
             <div className={styles.categoriesGrid}>

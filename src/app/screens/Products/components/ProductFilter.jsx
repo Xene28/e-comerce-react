@@ -1,6 +1,6 @@
 import { getCategories } from "../../../functions/queries"; 
 import { useState, useContext } from "react";
-import { ProductsContext } from "../Context/ProductsContext";
+import { ProductsContext } from "../../../Context/Products/ProductsContext";
 import FilterForm from "./FilterForm";
 import InputField from "./InputField";
 import SelectField from "./SelectField.jsx";
@@ -74,6 +74,8 @@ export default function ProductFilter() {
           })}
       </SelectField>
 
+      
+
       <InputField name="price" type="number" onChange={handleInputChange} value={filterObj.price} label="Price" />
 
       <InputField
@@ -94,5 +96,6 @@ export default function ProductFilter() {
 
       <InputField name="title" type="text" onChange={handleInputChange} value={filterObj.title} label="Title" />
     </FilterForm>
+    
   );
 }

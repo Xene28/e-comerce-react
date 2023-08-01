@@ -1,9 +1,10 @@
-import Error from "../../components/Error/Error"
-import Loader from "../../components/Loader/Loader"
+import Error from "../../../components/Error/Error"
+import Loader from "../../../components/Loader/Loader"
 import Detail from "./Components/Detail"
-import { getProductDetail } from "../../functions/queries"
+import { getProductDetail } from "../../../functions/queries"
 import { useParams } from "react-router-dom"
 import styles from "./styles.module.css"
+import CartDetail from "../../CartDetail"
 
 
 

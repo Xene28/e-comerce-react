@@ -7,14 +7,18 @@ import Login from "../app/screens/Login";
 import Register from "../app/screens/Register";
 import Categories from "../app/screens/Categories";
 import Products from "./screens/Products/Products";
-import ProductsDetail from "./screens/ProductDetail/ProductDetail";
+import ProductsDetail from "../app/screens/Products/ProductDetail/ProductDetail";
 import CartDetail from "../app/screens/CartDetail";
-import ProductsCreate from './screens/ProductsCreate/ProductsCreate';
-import ProductsEdit from './screens/ProductsCreate/ProductsEdit';
+import ProductsCreate from '../app/screens/Products/ProductsCreate/ProductsCreate';
+import ProductsEdit from '../app/screens/Products/ProductsCreate/ProductsEdit';
+import { useState } from 'react';
+import CartList from './screens/CartDetail/CartDetail';
+
 
 const queryClient = new QueryClient();
 
 function App() {
+ 
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -28,7 +32,8 @@ function App() {
             <Route path='/products/:id' element={<ProductsDetail />} />
             <Route path="/products/create" element={<ProductsCreate />} />
             <Route path="/products/edit/:id" element={<ProductsEdit />} />
-            <Route path="/cart-detail" element={<CartDetail />} />
+            <Route path='/cart-detail' element={<CartList />} />
+  
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import CartContext from "../../../Context/Cart/CartContext";
+import { useContext } from "react";
 
 
 export default function Product({ product }) {
+  const { addToCart } = useContext(CartContext)
   const { id, title, price, images, category } = product;
   const [firstImage] = images;
   const imageURL =
@@ -26,11 +29,13 @@ export default function Product({ product }) {
               <div className={styles.productPrice}>${price}</div>
             </div>
             <div>
-              <a href="">Add to Cart</a>
+              <button onClick={()=> addToCart(product) } >
+                Add to Cart
+                </button>
             </div>
           </div>
         </div>
       </div>
     </li>
   );
-}
+};
