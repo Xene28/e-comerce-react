@@ -1,6 +1,10 @@
 import styles from "./styles.module.css";
+import CartContext from "../../../../Context/Cart/CartContext";
+import { useContext } from "react";
+
 
 export default function Detail({ product }) {
+  const { addToCart } = useContext(CartContext)
   const {
     id,
     title,
@@ -29,7 +33,7 @@ export default function Detail({ product }) {
             <h6>Product id: {id}</h6>
             <h6>Created At: {creationAt}</h6>
             <h6>updatedAt: {updatedAt}</h6>
-            <a href="">Add to cart</a>
+            <button onClick={ ()=> addToCart(product) } >Add to Cart</button>
           </div>
         </div>
       </div>

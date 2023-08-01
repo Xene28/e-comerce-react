@@ -3,16 +3,44 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css"
 
 
-function Login() {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
+async function LoginUser(credentials) {
+    return fetch ('https://api.escuelajs.co/api/v1/auth/login', {
+        method: 'POST',
+        headers: {
+            'content-type':'application/json'
+        },
+        body: JSON.stringify(credentials)
+    })
+    .then(data => data.json())
+}
 
-    const handleSubmit = (e) => {
+function Sigin() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(email);
-        console.log(pass);
+        console.log(password);
 
+        const response = await LoginUser({
+            email,
+            password
+        })
 
+        //if ('accesToken' in response) {
+        //    swal("Succes", response.message, "succes",{
+        //        buttons: false,
+        //        timer: 2000,
+        //    }) 
+        //    .then((value) => {
+        //        localStorage.setItem('accessToken' , response['accesToken']);
+        //        localStorage.setItem('user', JSON.stringify(response['user']));
+        //        window.location.href = "/profile";
+        //    });
+        //}else {
+        //    swal("Failed", response.message, "error");
+        //}
     }
 
 
@@ -25,7 +53,7 @@ function Login() {
                 <label htmlFor="email">email</label>
                 <input  value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@email.com" id="email" name="email"/>
                 <label htmlFor="password">password</label>
-                <input  value={pass} onChange={(e) => setPass(e.target.value) } type="password" placeholder="********" id="password" name="password"/>
+                <input  value={password} onChange={(e) => setPassword(e.target.value) } type="password" placeholder="********" id="password" name="password"/>
                 <button>Log In</button>
             </form>
 
@@ -44,4 +72,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default Sigin;

@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { getProducts } from "../../../functions/queries";
-import { ProductsContext } from "../Context/ProductsContext";
+import { ProductsContext } from "../../../Context/Products/ProductsContext";
 import { useSearchParams } from "react-router-dom";
 import Error from "../../../components/Error/Error";
 import Loader from "../../../components/Loader/Loader";
 import ProductCard from "./ProductCard";
+import styles from "./styles.module.css"
 
 export default function ProductList() {
   const { order, state } = useContext(ProductsContext);
@@ -24,8 +25,8 @@ export default function ProductList() {
   return (
     <>
       <div className="col-2"></div>
-      <main className="col-10 p-4">
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-sm-2">
+      <main className={styles.productsList}>
+        <div className={styles.productsWrapper}>
           {isLoading && <Loader />}
           {isError && <Error error={error} />}
           {isSuccess &&
