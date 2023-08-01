@@ -31,8 +31,14 @@ function Navbar() {
           </Link>
         </li>
         <li>
+          <Link  className={styles.navElement} to="/cart-detail" >
+            Cart
+          </Link>
+        </li>
+        <li>
           <input className={styles.searchBar} type="text" placeholder="Search" />
         </li>
+        
       </ul>
 
       </nav>

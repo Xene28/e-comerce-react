@@ -1,7 +1,10 @@
-function CartDetail() {
+
+
+function CartDetail({cartItems}) {
     return (
         <>
         <h1>CartDetail</h1>
+
         </>
     )
 }

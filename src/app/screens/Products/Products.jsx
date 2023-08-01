@@ -1,38 +1,24 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { getProducts } from "../../functions/queries";
-import Loader from "../../components/Loader/Loader";
-import Error from "../../components/Error/Error";
-import Product from "./components/Product";
+import { ProductsContext } from "./Context/ProductsContext";
+import ProductList from "./components/ProductsList";
+import ProductFilter from "./components/ProductFilter";
 import styles from "./styles.module.css"
 
-function Products() {
+export default function Products() {
+  const defaultOrderObj = { field: "title", asc: 1 };
+  const [state, setState] = useState(useLocation().state || {});
+  const [order, setOrder] = useState(defaultOrderObj);
 
-    const search = useLocation().search;
-    const [filter, setFilter] = useState(search);
-    const { data: products, error, isError, isLoading, isSuccess } = getProducts(filter);
-
-    filter !== search && setFilter(search);
-    return (
-        <>
-            <h1>Products</h1>
-            
-                <div className={styles.productsGrid}>
-                    {isLoading && <Loader />}
-                    {isError && <Error error={error} /> }
-                    <ul className={styles.productsList} >
-                        
-                        {isSuccess && products.map((prod) => {
-                        return <Product key={prod.id} product={prod} />
-                    }) }
-                        
-                    </ul>
-                    
-                </div>
-
-            
-        </>
-    )
+  return (
+    <ProductsContext.Provider value={{ state, setState, order, setOrder, defaultOrderObj }}>
+      <main className="container-fluid">
+        <h1>Products</h1>
+        <div className="row">
+          <ProductFilter />
+          <ProductList />
+        </div>
+      </main>
+    </ProductsContext.Provider>
+  );
 }
-
-export default Products;
